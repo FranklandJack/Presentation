@@ -89,7 +89,7 @@ Theory}
         \begin{block}{Minkowski Action}
             
             \begin{equation}
-                    S = \int^{t_b}_{t_a}dt \left[\frac{1}{2}m\left(\frac{dx}{dt}\right)^2 - V(x)\right]
+                    S_{M} = \int^{t_b}_{t_a}dt \left[\frac{1}{2}m\left(\frac{dx}{dt}\right)^2 - V(x)\right]
             \end{equation}
             
         \end{block}
@@ -104,40 +104,82 @@ Theory}
 \begin{frame}{Theory - Discrete Time Lattice}
     \only<2>
     {
-        \centering
-        \includegraphics[scale=0.3]{dataForPresentation/PathIntegralDiscrete.png}\footfullcite{creutz_freedman_1981}
-    }
-    \only<3-4>
-    {
+    \centering
+    \begin{tikzpicture}[scale=0.5, every node/.style={transform shape}]
         
-        \begin{block}{Discrete Notation}
-            \only<3-4>
-            {
-                \begin{align}
-                & x\left(t_j\right) = x_j \\ 
-                \only<4>
-                {
-                    & t_{j+1} -t_j = \epsilon
-                }
-                \end{align}
-            }
-        \end{block}
+        \foreach \y in {0,...,13}{ \draw [help lines, dashed] (0,\y) -- (13,\y); }
+        \draw [ultra thick] [-] (0,13) -- coordinate (y axis mid) (0,0);
+        \draw [ultra thick] [-] (0,0) -- coordinate (x axis mid) (13,0);
+        \foreach \x in {0,2,...,13}
+            \draw (\x,3pt) -- (\x,-3pt);
+        \foreach \y in {0,...,13}
+            \draw (3pt,\y) -- (-3pt,\y);
+        \node [left] at (0,0) {$t_{0}$};
+        \node [left] at (0,1) {$t_{1}$};
+        \node [left] at (0,2) {$t_{2}$};
+        \node [left] at (0,3) {$t_{3}$};
+        \node [left] at (0,4) {$t_{4}$};
+        \node [left] at (0,5) {$t_{5}$};
+        \node [left] at (0,6) {$t_{6}$};
+        \node [left] at (0,7) {$t_{7}$};
+        \node [left] at (0,8) {$.$};
+        \node [left] at (0,9) {$.$};
+        \node [left] at (0,10) {$.$};
+        \node [left] at (0,11) {$t_{N-3}$};
+        \node [left] at (0,12) {$t_{N-2}$};
+        \node [left] at (0,13) {$t_{N-1}$};
+        \node[below=0.8cm] at (x axis mid) {position $x$};
+        \node[left=0.8cm] at (y axis mid) {time $t$};
+        \draw [thick] [<->] (13,7) -- (13,8) ;
+        \node [below=0.5cm] [right] at (13,8) {$\epsilon$};
+        \draw [thick] (1.5,0) -- (2.1,1);
+        \draw [thick] (2.1,1) -- (3.2,2);
+        \draw [thick] (3.2,2) -- (4.5,3);
+        \draw [thick] (4.5,3) -- (4.1,4);
+        \draw [thick] (4.1,4) -- (4.0,5);
+        \draw [thick] (4.0,5) -- (4.3,6);
+        \draw [thick] (4.3,6) -- (5.5,7);
+        \draw [thick] (5.5,7) -- (5.9,8);
+        \draw [thick] (5.9,8) -- (5.5,9);
+        \draw [thick] (5.5,9) -- (6.2,10);
+        \draw [thick] (6.2,10) -- (7.5,11);
+        \draw [thick] (7.5,11) -- (7.3,12);
+        \draw [thick] (7.3,12) -- (7.9,13);
+
+
+    \end{tikzpicture}
     }
-    \only<5->
+    %\only<3-4>
+    %{
+    %    
+    %    \begin{block}{Discrete Notation}
+    %        \only<3-4>
+    %        {
+    %            \begin{align}
+    %            & x\left(t_j\right) = x_j \\ 
+    %            \only<4>
+    %            {
+    %                & t_{j+1} -t_j = \epsilon
+    %            }
+    %            \end{align}
+    %        }
+    %    \end{block}
+    %}
+    \only<3->
     {
         
         \begin{block}{Discrete Action}
             \begin{equation}
-                S = \sum^{N-1}_{j=0} \epsilon \left[\frac{1}{2}m\frac{\left(x_{j+1}-x_j\right)^2}{\epsilon^2}-V\left(x_j\right)\right]
+                S_{M} = \sum^{N-1}_{j=0} \epsilon \left[\frac{1}{2}m\left(\frac{x_{j+1}-x_j}{\epsilon}\right)^2-V\left(x_j\right)\right]
             \end{equation}
         \end{block}
     }
-    \only<6->
+    \only<4->
     {
         
         \begin{block}{Discrete Path Integral}
             \begin{equation}
-                \braket{x_b,t_b|x_a,t_a} \sim \int^{\infty}_{-\infty}\prod^{N-1}_{j=1}dx_{j} \exp{\left(\frac{i}{\hbar}S\left\{x_j\right\}\right)}
+                \braket{x_b,t_b|x_a,t_a} \sim \int^{\infty}_{-\infty}\prod^{N-1}_{j=1}dx_{j} \exp{\left(\frac{i}{\hbar}S_{M}\left\{x_j\right\}\right)}
             \end{equation}
         \end{block}
     }
@@ -167,7 +209,7 @@ Theory}
             \only<4-5>
             {
                 \begin{equation}
-                    S = i \sum^{N-1}_{j=0} a \left[\frac{1}{2}m\frac{\left(x_{j+1}-x_j\right)^2}{a}+V\left(x_j\right)\right] \coloneqq iS_E
+                    S_{M} = i \sum^{N-1}_{j=0} a \left[\frac{1}{2}m\left(\frac{x_{j+1}-x_j}{a}\right)^2+V\left(x_j\right)\right] \coloneqq iS_E
                 \end{equation}
             }
         \end{block}
@@ -276,58 +318,58 @@ Theory}
     }
 \end{frame}
 
-\begin{frame}{Results - Harmonic Oscillator Potential}
-    \only<2->{\begin{figure}
-    \centering
-        \begin{tikzpicture}
-            \begin{axis}[
-                legend style={font=\tiny},
-                xlabel= {$x$},
-                ylabel style ={rotate=-90},
-                ylabel= {$V(x)$},
-                enlargelimits=true,
-                ]
-                \addplot[domain=-4:4, samples=100, color=black,]{0.5*x^2};
-                \addlegendentry{$V(x)=\frac{\mu^2}{2}x^2$}
-
-            \end{axis}
-        \end{tikzpicture}
-        \note[item]{Harmonic Oscillator Potential with $\mu^2 = 1$.}
-    \end{figure}}
-\end{frame}
+%\begin{frame}{Results - Harmonic Oscillator Potential}
+%    \only<2->{\begin{figure}
+%    \centering
+%        \begin{tikzpicture}
+%            \begin{axis}[
+%                legend style={font=\tiny},
+%                xlabel= {$x$},
+%                ylabel style ={rotate=-90},
+%                ylabel= {$V(x)$},
+%                enlargelimits=true,
+%                ]
+%                \addplot[domain=-4:4, samples=100, color=black,]{0.5*x^2};
+%                \addlegendentry{$V(x)=\frac{\mu^2}{2}x^2$}
+%
+%            \end{axis}
+%        \end{tikzpicture}
+%        \note[item]{Harmonic Oscillator Potential with $\mu^2 = 1$.}
+%    \end{figure}}
+%\end{frame}
 
 \begin{frame}{Results - Harmonic Oscillator Wave Function}
     
 
-    \only<4-6>{\begin{block}{Discrete Wave Function\footfullcite{creutz_freedman_1981}}
-    \only<4-6>{
+    \only<3-4>{\begin{block}{Discrete Wave Function\footfullcite{creutz_freedman_1981}}
+    \only<3-4>{
     
         \begin{equation}
             \psi_{disc.}{\left(x\right)} = \left(\frac{\omega}{\pi}\right)^\frac{1}{4}\exp{\left(-\frac{1}{2}\omega x^2\right)}
         \end{equation}
     }
     
-    \only<5-6>{
+    \only<4>{
     \begin{equation}
     \omega^2 = \mu^2\left(1+\frac{a^2 \mu^2}{4}\right)
     \end{equation}}
-    \only<6>{
-    \begin{equation}
-    \left| \psi_{disc.}{\left(x\right)} \right|^2 = \sqrt{\frac{\sqrt{5}}{2\pi}}\exp{\left(-\frac{1}{2}\sqrt{5}{\omega} x^2\right)}
-    \end{equation}}
+    %\only<6>{
+    %\begin{equation}
+    %\left| \psi_{disc.}{\left(x\right)} \right|^2 = \sqrt{\frac{\sqrt{5}}{2\pi}}\exp{\left(-\frac{1}{2}\sqrt{5}{\omega} x^2\right)}
+    %\end{equation}}
     \end{block}}
-    \only<9-10>{\begin{block}{Continuous Wave Function}
-    \only<9-10>{
+    \only<6>{\begin{block}{Continuous Wave Function}
+    \only<6>{
     \begin{equation}
     \psi_{cont.}{\left(x\right)} = \left(\frac{\mu}{\pi}\right)^\frac{1}{4}\exp{\left(-\frac{1}{2}\mu x^2\right)}
     \end{equation}}
-    \only<10>{
-    \begin{equation}
-    \left| \psi_{cont.}{\left(x\right)} \right|^2 = \frac{1}{\sqrt{2\pi}}\exp{\left(-x^2\right)}
-    \end{equation}}
+    %\only<10>{
+    %\begin{equation}
+    %\left| \psi_{cont.}{\left(x\right)} \right|^2 = \frac{1}{\sqrt{2\pi}}\exp{\left(-x^2\right)}
+    %\end{equation}}
     \end{block}}
 
-    \only<2,7,11->{\begin{figure}
+    \only<2,5,7->{\begin{figure}
     \centering
         \begin{tikzpicture}
             \begin{axis}[
@@ -337,7 +379,7 @@ Theory}
                 ylabel= {$\left|\psi{\left(x \right)}\right|^2$},
                 enlargelimits=true,
                 ]
-                \only<2,7,11->{\addplot[only marks, 
+                \only<2,5,7->{\addplot[only marks, 
                                    mark=x,color=black]
                             plot [error bars/.cd, 
                                     y dir = both, 
@@ -346,13 +388,13 @@ Theory}
                                   y index=1, 
                                   y error index=2]{DataForPresentation/HarmonicWaveFunction.dat};
                     \addlegendentry{Measured Values}}
-                \only<7,11->{\addplot[domain=-4:4,
+                \only<5,7->{\addplot[domain=-4:4,
                          samples=100,
                          color=blue,
                          ]
                          {sqrt(sqrt(5)/(2*pi))*e^(-0.5*sqrt(5)*x*x)};
                          \addlegendentry{Discrete Theory}}
-                \only<11->{\addplot[domain=-4:4,
+                \only<7->{\addplot[domain=-4:4,
                          samples=100,
                          color=red,
                          ]
@@ -384,76 +426,76 @@ Theory}
         \note[item]{Typical configuration for the harmonic oscillator with $\mu^2 = 1, m = 1, a = 1, L = 1000, d = 0.1, N = 10, \text{configurations} = 100000, \text{burn period} = 1000$.}
     \end{figure}}
 \end{frame}
+%
+%\begin{frame}{Results - Harmonic Oscillator Lattice spacing vs. $\braket{x^2}$}
+%
+%    \only<3-4>{
+%        \begin{block}{$\braket{x^2}$ on a lattice \footfullcite{creutz_freedman_1981}}
+%            \only<3-4>{
+%                \begin{equation}
+%                    \braket{x^2} = \frac{1}{2\left(1+\frac{1}{4}a^2\right)^{\frac{1}{2}}}\left(\frac{1+R^n}{1-R^n}\right)
+%                \end{equation}
+%            }
+%    
+%            \only<4>{
+%                \begin{equation}
+%                    R = 1 + \frac{a^2\mu^2}{2}-a\mu\left(1+\frac{a^2\mu^2}{4}\right)^{\frac{1}{2}}
+%                \end{equation}}
+%        \end{block}
+%    }
+%
+%    \only<2,5->{\begin{figure}
+%    \centering
+%        \begin{tikzpicture}
+%            \begin{axis}[
+%                legend style={font=\tiny},
+%                xlabel= {$a$},
+%                ylabel style ={rotate=-90},
+%                ylabel= {$\braket{x^2}$},
+%                enlargelimits=true,
+%                ]
+%                \only<2,5->{\addplot[only marks, 
+%                                   mark=x,color=black]
+%                            plot [error bars/.cd, 
+%                                    y dir = both, 
+%                                    y explicit]
+%                            table[x index=0, 
+%                                  y index=1, 
+%                                  y error index=2]{DataForPresentation/LatticeSpacingvsExpectationXSquared.dat};
+%                    \addlegendentry{Measured Values}}
+%                \only<5->{\addplot[domain=0:1,
+%                         samples=100,
+%                         color=blue,
+%                         ]
+%                         {(1/2)*(1/sqrt(1+0.25*x*x)) * ((1+(1+0.5*x*x-x*sqrt(1+0.25*x*x))^(1000))/((1-(1+0.5*x*x-x*sqrt(1+0.25*x*x))^(1000))))};
+%                         \addlegendentry{Discrete Theory}}
+%                         
+%
+%            \end{axis}
+%        \end{tikzpicture}
+%        \note[item]{Relationship between lattice spacing and expectation of position squared for the harmonic oscillator with $\mu^2 = 1, m = 1, a = 1, L = 1000, d = 0.1, N = 10, \text{configurations} = 100000, \text{burn period} = 1000$.}
+%    \end{figure}}   
+%\end{frame}
 
-\begin{frame}{Results - Harmonic Oscillator Lattice spacing vs. $\braket{x^2}$}
-
-    \only<3-4>{
-        \begin{block}{$\braket{x^2}$ on a lattice \footfullcite{creutz_freedman_1981}}
-            \only<3-4>{
-                \begin{equation}
-                    \braket{x^2} = \frac{1}{2\left(1+\frac{1}{4}a^2\right)^{\frac{1}{2}}}\left(\frac{1+R^n}{1-R^n}\right)
-                \end{equation}
-            }
-    
-            \only<4>{
-                \begin{equation}
-                    R = 1 + \frac{a^2\mu^2}{2}-a\mu\left(1+\frac{a^2\mu^2}{4}\right)^{\frac{1}{2}}
-                \end{equation}}
-        \end{block}
-    }
-
-    \only<2,5->{\begin{figure}
-    \centering
-        \begin{tikzpicture}
-            \begin{axis}[
-                legend style={font=\tiny},
-                xlabel= {$a$},
-                ylabel style ={rotate=-90},
-                ylabel= {$\braket{x^2}$},
-                enlargelimits=true,
-                ]
-                \only<2,5->{\addplot[only marks, 
-                                   mark=x,color=black]
-                            plot [error bars/.cd, 
-                                    y dir = both, 
-                                    y explicit]
-                            table[x index=0, 
-                                  y index=1, 
-                                  y error index=2]{DataForPresentation/LatticeSpacingvsExpectationXSquared.dat};
-                    \addlegendentry{Measured Values}}
-                \only<5->{\addplot[domain=0:1,
-                         samples=100,
-                         color=blue,
-                         ]
-                         {(1/2)*(1/sqrt(1+0.25*x*x)) * ((1+(1+0.5*x*x-x*sqrt(1+0.25*x*x))^(1000))/((1-(1+0.5*x*x-x*sqrt(1+0.25*x*x))^(1000))))};
-                         \addlegendentry{Discrete Theory}}
-                         
-
-            \end{axis}
-        \end{tikzpicture}
-        \note[item]{Relationship between lattice spacing and expectation of position squared for the harmonic oscillator with $\mu^2 = 1, m = 1, a = 1, L = 1000, d = 0.1, N = 10, \text{configurations} = 100000, \text{burn period} = 1000$.}
-    \end{figure}}   
-\end{frame}
-
-\begin{frame}{Results - Anharmonic Oscillator Potential}
-    \only<2->{\begin{figure}
-    \centering
-        \begin{tikzpicture}
-            \begin{axis}[
-                legend style={font=\tiny},
-                xlabel= {$x$},
-                ylabel= {$V(x)$},
-                ylabel style ={rotate=-90},
-                enlargelimits=true,
-                ]
-                \addplot[domain=-4:4, samples=100, color=black,]{x^4-8*x^2+16};
-                \addlegendentry{$V(x)=\lambda\left(x^2-f^2\right)^2$}
-
-            \end{axis}
-        \end{tikzpicture}
-        \note[item]{Anharmonic Oscillator Potential with $\lambda = 1, f^2 = 4$.}
-    \end{figure}}
-\end{frame}
+%\begin{frame}{Results - Anharmonic Oscillator Potential}
+%    \only<2->{\begin{figure}
+%    \centering
+%        \begin{tikzpicture}
+%            \begin{axis}[
+%                legend style={font=\tiny},
+%                xlabel= {$x$},
+%                ylabel= {$V(x)$},
+%                ylabel style ={rotate=-90},
+%                enlargelimits=true,
+%                ]
+%                \addplot[domain=-4:4, samples=100, color=black,]{x^4-8*x^2+16};
+%                \addlegendentry{$V(x)=\lambda\left(x^2-f^2\right)^2$}
+%
+%            \end{axis}
+%        \end{tikzpicture}
+%        \note[item]{Anharmonic Oscillator Potential with $\lambda = 1, f^2 = 4$.}
+%    \end{figure}}
+%\end{frame}
 
 \begin{frame}{Results - Anharmonic Oscillator Expectation Values}
     \only<2->{
