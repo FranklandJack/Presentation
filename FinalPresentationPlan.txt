@@ -1,0 +1,33 @@
+Introduction:
+	- What are we doing?
+		- Calculating properties of QM systems.
+	- How are we doing it?
+		- Using HMC.
+	- Aim of project?
+		- Problem of isolated modes in probability distribution.
+		- Investigate effect of introducing tempering parameter to solve this problem.
+	- Motivation for doing this?
+		- Would give better approximations of quantities in are QM system.
+		- Applications to lattice field theories such as QCD on a lattice where regions of distinct topological charge arise as isolated modes.
+
+Background:
+	- QM Path integral = statistical physics canonical distribution function on lattice.
+	- QM expectation values in GS = expectation values under canonical distribution on lattice.
+
+Methods:
+	- Use Monte Carlo methods to calculate the expectation values.
+		- HMC algorithm:
+			- Explanation of the steps of the algorithm. 
+
+Results:
+	- Show graphs for harmonic oscillator results.
+	- Show graphs for anharmonic oscillator results. 
+	- Show an example of tunnelling problem and isolated modes.
+
+Tempering:
+	- Explain how to incorporate tempering into the algorithm.
+	- Explain how it increases the Hamiltonian along the trajectory and that this allows the Markov Chain to move  	
+	  between the isolated modes. Show graphs of Hamiltonian on trajectory.
+	- Explain how the configurations change as the Hamiltonian increases by including graphs.
+	- Explain how the Hamiltonian is often bigger at the end of the trajectory than at the beginning and this is why it 
+	  doesn't work? 
