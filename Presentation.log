@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.18)  2 APR 2018 09:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.18)  2 APR 2018 16:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -657,10 +657,6 @@ emedefault.sty
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/outer/beamerouterth
 emedefault.sty)))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeMo
-ntpellier.sty
-(/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/outer/beamerouterth
-emetree.sty))
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/color/beamercolorth
 emeorchid.sty)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/font/beamerfontthem
@@ -1631,9 +1627,9 @@ your preamble.
 LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 38.
 
-[1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1
 
-]
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for U+msa on input line 65.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1658,85 +1654,116 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [8
 
-] [9
-
 ]
-LaTeX Font Info:    Calculating math sizes for size <40> on input line 244.
+LaTeX Font Info:    Calculating math sizes for size <40> on input line 127.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <40> not available
-(Font)              size <42.99> substituted on input line 244.
+(Font)              size <42.99> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <27.99988> not available
-(Font)              size <29.86> substituted on input line 244.
+(Font)              size <29.86> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 244.
+(Font)              size <20.74> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <40> not available
-(Font)              size <24.88> substituted on input line 244.
+(Font)              size <24.88> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <27.99988> not available
-(Font)              size <24.88> substituted on input line 244.
+(Font)              size <24.88> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <20> not available
-(Font)              size <20.74> substituted on input line 244.
+(Font)              size <20.74> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <40> not available
-(Font)              size <24.88> substituted on input line 244.
+(Font)              size <24.88> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <27.99988> not available
-(Font)              size <24.88> substituted on input line 244.
+(Font)              size <24.88> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 244.
+(Font)              size <20.74> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <40> not available
-(Font)              size <42.99> substituted on input line 244.
+(Font)              size <42.99> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <27.99988> not available
-(Font)              size <29.86> substituted on input line 244.
+(Font)              size <29.86> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 244.
+(Font)              size <20.74> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <40> not available
-(Font)              size <24.88> substituted on input line 244.
+(Font)              size <24.88> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <27.99988> not available
-(Font)              size <24.88> substituted on input line 244.
+(Font)              size <24.88> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <20> not available
-(Font)              size <20.74> substituted on input line 244.
+(Font)              size <20.74> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <40> not available
-(Font)              size <24.88> substituted on input line 244.
+(Font)              size <24.88> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <27.99988> not available
-(Font)              size <24.88> substituted on input line 244.
+(Font)              size <24.88> substituted on input line 127.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 244.
+(Font)              size <20.74> substituted on input line 127.
 
 
-Overfull \vbox (50.75888pt too high) detected at line 244
+Overfull \vbox (9.77003pt too high) detected at line 127
+ []
+
+[9
+
+]
+LaTeX Font Info:    Calculating math sizes for size <20> on input line 252.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13.99994> not available
+(Font)              size <14.4> substituted on input line 252.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13.99994> not available
+(Font)              size <14.4> substituted on input line 252.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13.99994> not available
+(Font)              size <14.4> substituted on input line 252.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <13.99994> not available
+(Font)              size <14.4> substituted on input line 252.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <13.99994> not available
+(Font)              size <14.4> substituted on input line 252.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <13.99994> not available
+(Font)              size <14.4> substituted on input line 252.
+
+
+Overfull \vbox (17.57816pt too high) detected at line 252
  []
 
 [10
@@ -3593,7 +3620,7 @@ PGFPlots: reading {../Report/DataForReport/HarmonicWaveFunction.dat}
 ] [31
 
 ]
-Overfull \hbox (9.48694pt too wide) detected at line 695
+Overfull \hbox (9.48694pt too wide) detected at line 713
 \OML/cmm/m/it/10.95 H[] [] \OT1/cmr/m/n/10.95 = [] [] + [] \OML/cmm/m/it/10.95 
 a []
  []
@@ -5416,7 +5443,11 @@ PGFPlots: reading {../Report/DataForReport/MeasuredAnharmonicGroundstateEnergie
 sa1.dat}
 PGFPlots: reading {../Report/DataForReport/MeasuredFirstExcitedStateEnergiesa1.
 dat}
- [35
+
+Overfull \vbox (14.88431pt too high) detected at line 776
+ []
+
+[35
 
 ]
 PGFPlots: reading {../Report/DataForReport/AnharmonicWaveFunction.dat}
@@ -5426,7 +5457,7 @@ PGFPlots: reading {../Report/DataForReport/AnharmonicWaveFunction.dat}
 PGFPlots: reading {../Report/DataForReport/f1initialconfig.dat}
 PGFPlots: reading {../Report/DataForReport/f1finalconfig.dat}
 
-Overfull \vbox (34.56194pt too high) detected at line 813
+Overfull \vbox (9.94354pt too high) detected at line 834
  []
 
 [37
@@ -5438,9 +5469,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{fig:initialfi
 nalf2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.838     \end{frame}
+l.859     \end{frame}
                      
-Overfull \vbox (34.56194pt too high) detected at line 838
+Overfull \vbox (9.94354pt too high) detected at line 859
  []
 
 [38
@@ -5453,7 +5484,7 @@ PGFPlots: reading {../Report/DataForReport/f3isolatedmodewavefunction.dat}
 PGFPlots: reading {../Report/DataForReport/f4initialconfig.dat}
 PGFPlots: reading {../Report/DataForReport/f4finalconfig.dat}
 
-Overfull \vbox (34.56194pt too high) detected at line 887
+Overfull \vbox (9.94354pt too high) detected at line 909
  []
 
 [40
@@ -5469,7 +5500,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.909     \end{frame}
+l.932     \end{frame}
                      
 ? 
 [41
@@ -5480,75 +5511,128 @@ l.909     \end{frame}
 
 ] [44
 
+] [45
+
+] [46
+
+] [47
+
+] [48
+
 ]
 PGFPlots: reading {../Report/DataForReport/1001HamiltonianEvolution.dat}
- [45
+
+Overfull \vbox (13.74425pt too high) detected at line 1018
+ []
+
+[49
 
 ]
 PGFPlots: reading {../Report/DataForReport/1001ConfigurationEvolution1.dat}
 PGFPlots: reading {../Report/DataForReport/1001ConfigurationEvolution2.dat}
 PGFPlots: reading {../Report/DataForReport/1001ConfigurationEvolution3.dat}
 
-Overfull \vbox (10.00676pt too high) detected at line 980
+Overfull \vbox (14.93282pt too high) detected at line 1050
  []
 
-[46
+[50
 
 ]
 PGFPlots: reading {../Report/DataForReport/101HamiltonianEvolution.dat}
 
-Overfull \vbox (3.62633pt too high) detected at line 1001
+Overfull \vbox (8.55238pt too high) detected at line 1072
  []
 
-[47
+[51
 
 ]
 PGFPlots: reading {../Report/DataForReport/101ConfigurationEvolution1.dat}
 PGFPlots: reading {../Report/DataForReport/101ConfigurationEvolution2.dat}
 PGFPlots: reading {../Report/DataForReport/101ConfigurationEvolution3.dat}
 
-Overfull \vbox (10.00676pt too high) detected at line 1030
+Overfull \vbox (14.93282pt too high) detected at line 1102
  []
 
-[48
+[52
 
 ]
 PGFPlots: reading {../Report/DataForReport/105HamiltonianEvolution.dat}
 
-Overfull \vbox (9.21239pt too high) detected at line 1050
+Overfull \vbox (14.13844pt too high) detected at line 1123
  []
 
-[49
+[53
 
 ]
 PGFPlots: reading {../Report/DataForReport/105ConfigurationEvolution1.dat}
 PGFPlots: reading {../Report/DataForReport/105ConfigurationEvolution2.dat}
 PGFPlots: reading {../Report/DataForReport/105ConfigurationEvolution3.dat}
 
-Overfull \vbox (12.43675pt too high) detected at line 1079
+Overfull \vbox (17.36281pt too high) detected at line 1153
  []
 
-[50
+[54
 
-] [51
-
-] [52
-
-] [53
-
-] (./Presentation.bbl) [54
-
- </usr/local/texlive/2017/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
->] [55
-
+] [55
 
 ] [56
 
 ] [57
 
-] [58
+] (./Presentation.bbl) [58
 
-] [59
+ </usr/local/texlive/2017/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
+>] [59
+
+
+]
+
+! Package amsmath Error: Multiple \label's: label 'eq:psMap1' will be lost.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1209 \end{frame}
+                  
+? 
+[60
+
+] [61
+
+
+] [62
+
+] [63
+
+
+] [64
+
+
+] [65
+
+]
+
+! LaTeX Error: \begin{equation*} on input line 1267 ended by \end{equation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1267 \end{frame}
+                  
+? 
+
+! LaTeX Error: \begin{equation*} on input line 1267 ended by \end{equation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1267 \end{frame}
+                  
+? 
+[66
 
 ]
 \tf@nav=\write6
@@ -5560,12 +5644,11 @@ Overfull \vbox (12.43675pt too high) detected at line 1079
 \tf@snm=\write8
 \openout8 = `Presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1153.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1153.
-
-(./Presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1153.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1153.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1271.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1271.
+ (./Presentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1271.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1271.
 
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 667F7861CD6949CF516ACD4CCEF9462A;218.
@@ -5579,11 +5662,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 33609 strings out of 492995
- 789805 string characters out of 6132703
- 1179898 words of memory out of 5000000
- 36244 multiletter control sequences out of 15000+600000
- 33941 words of font info for 109 fonts, out of 8000000 for 9000
+ 33591 strings out of 492995
+ 788040 string characters out of 6132703
+ 1177759 words of memory out of 5000000
+ 36213 multiletter control sequences out of 15000+600000
+ 34573 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,18n,98p,793b,2477s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -5598,29 +5681,30 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
 ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
 al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texlive/2017/
-texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2017/texmf-di
-st/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on Presentation.pdf (59 pages, 429830 bytes).
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2017/texm
+f-dist/fonts/type1/public/cm-super/sfss1440.pfb>
+Output written on Presentation.pdf (66 pages, 443102 bytes).
 PDF statistics:
- 716 PDF objects out of 1000 (max. 8388607)
- 551 compressed objects within 6 object streams
- 142 named destinations out of 1000 (max. 500000)
+ 589 PDF objects out of 1000 (max. 8388607)
+ 476 compressed objects within 5 object streams
+ 161 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

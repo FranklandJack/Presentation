@@ -1,7 +1,7 @@
 \documentclass{beamer}
 \mode<presentation>
 {
-  \usetheme{Montpellier}
+  \usetheme{default}
   \usecolortheme{orchid} 
   \usefonttheme{professionalfonts} 
   \setbeamertemplate{navigation symbols}{}
@@ -76,6 +76,7 @@ Theory}
                         \label{eq:PathIntegral}
                         \braket{x_b,t_b|x_a,t_a} = \int^{x_b}_{x_a} {\cal D}{x} \exp{\left(iS_{M}\left[{x\left(t\right)}\right]\right)}
                     \end{equation*}
+                Probability density of $\left(x_b,t_b\right)\rightarrow\left(x_a,t_a\right)$. \\ Integral over all paths between $\left(x_b,t_b\right)$ and $\left(x_a,t_a\right)$.
                 }
             \end{block}
         }
@@ -93,32 +94,35 @@ Theory}
         }
         \only<3>
         {  
-            \centering
-            \begin{tikzpicture}[scale=0.5, every node/.style={transform shape}]
-                \draw [ultra thick] [-] (0,13) -- coordinate (y axis mid) (0,0);
-                \draw [ultra thick] [-] (0,0) -- coordinate (x axis mid) (13,0);
-                \foreach \x in {0,2,...,13}
-                    \draw (\x,3pt) -- (\x,-3pt);
-                \foreach \y in {0,...,13}
-                    \draw (3pt,\y) -- (-3pt,\y);
-                \node[below=0.8cm] at (x axis mid) {position $x$};
-                \node[left=0.8cm] at (y axis mid) {time $t$};
-                \node [left] at (0,0) {$t_{a}$};
-                \node [left] at (0,13) {$t_{b}$};
-                \node [below] at (4.5,0) {$x_a$};
-                \node [below] at (10.2,0) {$x_b$};
-                \draw [-,thick, blue] (4.5,0) to [out=90,in=180] (2.5,4.3)
-                        to [out=0,in=180] (1.4,8.9) to [out=0,in=-135] (5.3,10.7) 
-                        to [out=45,in=225] (6.2,11.3) to [out=45,in=-90] (10.2,13);
-                \draw [-,thick, green] (4.5,0) to [out=90,in=-45] (5.2,2.1)
-                        to [out=135,in=180] (5.0,4.6) to [out=0,in=-135] (7.3,6.1) 
-                        to [out=45,in=225] (10.2,7.2) to [out=45,in=-45] (8.9,8.7)
-                        to [out=135,in=180] (7.5,11.3) to [out=0,in=-90] (10.2,13);
-                \draw [-,thick, red] (4.5,0) to [out=90,in=-45] (12.5,3.5)
-                        to [out=135,in=225] (8,5.1) to [out=45,in=-135] (1.8,8.4) 
-                        to [out=45,in=270] (5.9,10.5) to [out=90,in=-45] (10.7,12.5)
-                        to [out=135,in=-90] (10.2,13);
-            \end{tikzpicture} 
+            \begin{figure}
+                \centering
+                \begin{tikzpicture}[scale=0.5, every node/.style={transform shape}]
+                    \draw [ultra thick] [-] (0,13) -- coordinate (y axis mid) (0,0);
+                    \draw [ultra thick] [-] (0,0) -- coordinate (x axis mid) (13,0);
+                    \foreach \x in {0,2,...,13}
+                        \draw (\x,3pt) -- (\x,-3pt);
+                    \foreach \y in {0,...,13}
+                        \draw (3pt,\y) -- (-3pt,\y);
+                    \node[below=0.8cm] at (x axis mid) {$\text{position}$ $x$};
+                    \node[left=0.8cm] at (y axis mid) {$\text{time}$ $t$};
+                    \node [left,font=\fontsize{40}{0}] at (0,0) {$t_{a}$};
+                    \node [left,font=\fontsize{40}{0}] at (0,13) {$t_{b}$};
+                    \node [below,font=\fontsize{40}{0}] at (4.5,-0.1) {$x_a$};
+                    \node [below,font=\fontsize{40}{0}] at (10.2,-0.1) {$x_b$};
+                    \draw [-,thick, blue] (4.5,0) to [out=90,in=180] (2.5,4.3)
+                            to [out=0,in=180] (1.4,8.9) to [out=0,in=-135] (5.3,10.7) 
+                            to [out=45,in=225] (6.2,11.3) to [out=45,in=-90] (10.2,13);
+                    \draw [-,thick, green] (4.5,0) to [out=90,in=-45] (5.2,2.1)
+                            to [out=135,in=180] (5.0,4.6) to [out=0,in=-135] (7.3,6.1) 
+                            to [out=45,in=225] (10.2,7.2) to [out=45,in=-45] (8.9,8.7)
+                            to [out=135,in=180] (7.5,11.3) to [out=0,in=-90] (10.2,13);
+                    \draw [-,thick, red] (4.5,0) to [out=90,in=-45] (12.5,3.5)
+                            to [out=135,in=225] (8,5.1) to [out=45,in=-135] (1.8,8.4) 
+                            to [out=45,in=270] (5.9,10.5) to [out=90,in=-45] (10.7,12.5)
+                            to [out=135,in=-90] (10.2,13);
+                \end{tikzpicture} 
+                \caption{Three possible paths from $\left(x_a,t_a\right)$ to $\left(x_b,t_b\right)$.}
+            \end{figure}
         }
     \end{frame}
 
@@ -137,10 +141,10 @@ Theory}
                     \draw (\x,3pt) -- (\x,-3pt);
                 \foreach \y in {0,...,13}
                     \draw (3pt,\y) -- (-3pt,\y);
-                \node [left] at (0,0) {$t_{0}=t_{a}$};
-                \node [left] at (0,1) {$t_{1}$};
-                \node [left] at (0,2) {$t_{2}$};
-                \node [left] at (0,3) {$t_{3}$};
+                \node [left,font=\fontsize{20}{0}] at (0,0) {$t_{0}=t_{a}$};
+                \node [left,font=\fontsize{20}{0}] at (0,1) {$t_{1}$};
+                \node [left,font=\fontsize{20}{0}] at (0,2) {$t_{2}$};
+                \node [left,font=\fontsize{20}{0}] at (0,3) {$t_{3}$};
                 \node [left] at (0,4) {$.$};
                 \node [left] at (0,5) {$.$};
                 \node [left] at (0,6) {$.$};
@@ -148,9 +152,9 @@ Theory}
                 \node [left] at (0,8) {$.$};
                 \node [left] at (0,9) {$.$};
                 \node [left] at (0,10) {$.$};
-                \node [left] at (0,11) {$t_{N-2}$};
-                \node [left] at (0,12) {$t_{N-1}$};
-                \node [left] at (0,13) {$t_{N}=t_{b}$};
+                \node [left,font=\fontsize{20}{0}] at (0,11) {$t_{N-2}$};
+                \node [left,font=\fontsize{20}{0}] at (0,12) {$t_{N-1}$};
+                \node [left,font=\fontsize{20}{0}] at (0,13) {$t_{N}=t_{b}$};
                 \node[below=0.8cm] at (x axis mid) {position $x$};
                 \node[left=0.8cm] at (y axis mid) {time $t$};
                 \draw [thick] [<->] (13,7) -- (13,8) ;
@@ -168,8 +172,8 @@ Theory}
                 \draw [thick,green] (8.2,10) -- (7.1,11);
                 \draw [thick,green] (7.1,11) -- (9.5,12);
                 \draw [thick,green] (9.5,12) -- (10.2,13);
-                \node [below] at (4.5,0) {$x_a$};
-                \node [below] at (10.2,0) {$x_b$};
+                \node [below,font=\fontsize{20}{0}] at (4.5,-0.1) {$x_a$};
+                \node [below,font=\fontsize{20}{0}] at (10.2,-0.1) {$x_b$};
             \end{tikzpicture}
             \caption{Discretising time and a path from $\left(x_a,t_a\right)$ to $\left(x_b,t_b\right)$  onto a lattice of time spacing $\epsilon$.}
             \label{fig:TimeLattice}
@@ -197,6 +201,7 @@ Theory}
             \begin{block}{Configuration}
             \only<2->
             {
+                Specific path through lattice, each lattice variable specified:
                 \begin{equation*}
                     \label{eq:Configuration}
                         \bm{x} = \left(x_0,x_1,\dots,x_{N-1}\right)
@@ -205,6 +210,7 @@ Theory}
                     \label{eq:SiteNotation}
                         x_i=x\left(t_i\right)
                 \end{equation*}
+                
             }
             \end{block}
         \only<3->
@@ -212,18 +218,20 @@ Theory}
             \begin{block}{Wick Rotation}
                 \only<3->
                 {
+                    Substitution for imaginary time:
                     \begin{equation*}
                     \label{eq:WickRotation}
                         \tau = it 
                     \end{equation*}
                 }
                 \only<4->
-                {
+                {   Rotate lattice through complex plane into imaginary time of lattice spacing:
                     \begin{equation*}
                         \label{eq:WickRotationLattice}
                         a = i \epsilon
                     \end{equation*}
                 }
+            
             \end{block}
         }
         }
@@ -317,6 +325,7 @@ Theory}
                         Z \sim \int^{\infty}_{-\infty}\prod^{N-1}_{j=0}dx_{j} \exp{\left(-S_E\left(\bm{x}\right)\right)}
                     \end{equation*}
                 }
+                Partition function of statistical mechanical system if $H\left(\bm{x}\right)=S_E\left(\bm{x}\right).$
             \end{block}
         }
 
@@ -332,6 +341,7 @@ Theory}
                                              & = \langle A \rangle
                     \end{align*}
                 }
+            Ground state energy corresponds to statistical expectation of function $A$ on lattice.
             \end{block}
         }
     \end{frame}
@@ -343,6 +353,7 @@ Theory}
         \only<1-2>
         {
             \begin{block}{Expectation Value}
+                Integrals cannot be computed analytically:
                 \only<1-2>
                 {
                 \begin{equation*}
@@ -357,6 +368,7 @@ Theory}
             \begin{block}{Monte Carlo Estimate}
                 \only<2-3>
                 {
+                Approximate integral as sample mean on equilibrium lattice configurations $\bm{x}_n$:
                 \begin{equation*}
                     \label{eq:MonteCarloEstimate}
                     \langle A \rangle = \frac{1}{M}\sum^{M}_{n = 1} A\left(\bm{x}_{n}\right)
@@ -369,6 +381,7 @@ Theory}
             \begin{block}{Boltzmann Distribution}
                 \only<3>
                 {
+                Generate the configurations $\bm{x}_n$ according to canonical distribution:
                 \begin{equation*}
                     \label{eq:BoltzmannDistribution}
                     p\left(\bm{x}\right)=\frac{1}{Z}\exp\left(-S_E\left(\bm{x}\right)\right)
@@ -384,7 +397,8 @@ Theory}
         {
             \begin{block}{Fictitious Momenta}
             \only<1-2>
-            {
+            {   
+                Introduce fictitious momentum variable to go with each lattice variable:
                 \begin{equation*}
                     \label{eq:FictitiousMomenta}
                     \bm{p} = \left(p_0,p_1,\dots,p_{N-1}\right)
@@ -397,6 +411,7 @@ Theory}
             \begin{block}{HMC Hamiltonian}
                 \only<2>
                 {
+                Hamiltonian for the joint canonical but separable distribution of $\left(\bm{x},\bm{p}\right)$:
                 \begin{equation*}
                     \label{eq:HMCHamiltonian}
                     H_{HMC}\left(\bm{x},\bm{p}\right) \coloneqq \sum_{i=0}^{N-1} \frac{ p_{i}^{2} } {2} + S_{E}\left(\bm{x}\right)
@@ -416,7 +431,7 @@ Theory}
 
                     \item<2-> Generate $\bm{p}$ from $\mathcal{N}\left(\bm{0},\mathbb{I}\right)$.
 
-                    \item<3-> Evolve $\left(\bm{x}, \bm{p}\right)$ using Hamilton's equation's to a final state $\left(\bm{x}', \bm{p}'\right)$ then negate the momenta $\left(\bm{x}', -\bm{p}'\right)$.
+                    \item<3-> Evolve $\left(\bm{x}, \bm{p}\right)$ using Hamilton's equations (leapfrog method) to a final state $\left(\bm{x}', \bm{p}'\right)$.
 
                     \item<4-> Accept configuration $\bm{x}$ with probability $ \min{\left[1,\exp{\left(-H_{HMC}\left(\bm{x}',\bm{p}'\right)+H_{HMC}\left(\bm{x},\bm{p}\right)\right)}\right]}$ (Metropolis update).
 
@@ -463,6 +478,7 @@ Theory}
                             \end{axis}
                         \end{tikzpicture}
                         \label{fig:TypicalHarmonicPath}
+                        \caption{Typical equilibrium configuration on $100$ site lattice at spacing $a=1$ with harmonic potential $\mu=1$.}
                 \end{figure}
         }
     \end{frame}
@@ -498,6 +514,7 @@ Theory}
                         \end{axis}
                     \end{tikzpicture}
                     \label{fig:MeanXSquaredPlot}
+                    \caption{Mean position squared for a range of finite lattice spacings on a $100$ site lattice with harmonic potential $\mu=1$.}
                 \end{figure}
         }
     \end{frame}
@@ -539,6 +556,7 @@ Theory}
                         \end{axis}
                     \end{tikzpicture}
                     \label{fig:HarmonicWaveFunction}
+                    \caption{Ground state probability density function for $100$ site lattice at spacing $a=1$ for harmonic potential $\mu=1$.}
                 \end{figure}
             
         }
@@ -671,7 +689,7 @@ Theory}
     
                \end{axis}
            \end{tikzpicture}
-           \note[item]{Harmonic Oscillator Potential with $\mu^2 = 1$.}
+           \caption{Anharmonic potential parameterisation, wells coincide with minima at $\pm f$ forming symmetric double wells.}
         \end{figure}
     }
         \only<1-2>
@@ -714,6 +732,7 @@ Theory}
                         \end{axis}
                     \end{tikzpicture}
                     \label{fig:TypicalAnharmonicTrajectory}
+                    \caption{Typical equilibrium configuration on $100$ site lattice at spacing $a=1$ with anharmonic potential $\lambda=1, f=1$.}
                 \end{figure}
         }
     \end{frame}
@@ -751,6 +770,7 @@ Theory}
                         \end{axis}
                     \end{tikzpicture}
                     \label{fig:AnharmonicEnergies}
+                    \caption{Ground and first excited state energy eigenvalues on $1000$ site lattice at spacing $a=0.1$ with anharmonic potential $\lambda=1$ for a range of $f$ values.}
                 \end{figure}
         }
     \end{frame}
@@ -778,11 +798,12 @@ Theory}
                         \end{axis}
                     \end{tikzpicture}
                     \label{fig:AnharmonicWaveFunction}
+                    \caption{Ground state probability density function on $100$ site lattice of spacing $a=1$ with anharmonic potential $\lambda=1,f=1$.}
                 \end{figure}
         }
     \end{frame}
 
-    \begin{frame}{Isolated Modes \textcolor{black}{$f=1$}}
+    \begin{frame}{Isolated Modes \textcolor{black}{$\lambda=1,f=1$}}
 
         \only<1>
         {
@@ -806,12 +827,12 @@ Theory}
                         \draw [gray,dashed] (axis cs: 1,-10) -- (axis cs:1,120);
                     \end{axis}
                 \end{tikzpicture}
-                \caption{$f^2=1$}
+                \caption{Initial and final equilibrium configurations after $100000$ iterations on $100$ site lattice at spacing $a=1$.}
                 \label{fig:initialfinalf2}
             \end{figure}
         }
     \end{frame}
-    \begin{frame}{Isolated Modes\textcolor{black}{$f=\sqrt{3}$}}
+    \begin{frame}{Isolated Modes \textcolor{black}{$\lambda=1,f=\sqrt{3}$}}
             \begin{figure}
                 \begin{tikzpicture}
                     \begin{axis}[
@@ -832,11 +853,11 @@ Theory}
                         \draw [gray,dashed] (axis cs: 1.732,-10) -- (axis cs:1.732,120);
                     \end{axis}
                 \end{tikzpicture}
-                \caption{$f^2=3$}
+                \caption{Initial and final equilibrium configurations after $100000$ iterations on $100$ site lattice at spacing $a=1$.}
                 \label{fig:initialfinalf2}
             \end{figure}
     \end{frame}
-    \begin{frame}{Isolated Modes \textcolor{black}{$f=\sqrt{3}$}}
+    \begin{frame}{Isolated Modes \textcolor{black}{$\lambda=1,f=\sqrt{3}$}}
         \begin{figure}
                     \centering
                     \begin{tikzpicture}[scale=1]
@@ -856,11 +877,12 @@ Theory}
 
                         \end{axis}
                     \end{tikzpicture}
+                    \caption{Asymmetric density function and non zero mean position.}
     
         \end{figure}
         
     \end{frame}
-    \begin{frame}{Isolated Modes \textcolor{black}{$f=2$}}
+    \begin{frame}{Isolated Modes \textcolor{black}{$\lambda=1,f=2$}}
             \begin{figure}
                 \begin{tikzpicture}
                     \begin{axis}[
@@ -881,11 +903,11 @@ Theory}
                         \draw [gray,dashed] (axis cs: 2,-10) -- (axis cs: 2,120);
                     \end{axis}
                 \end{tikzpicture}
-                \caption{$f^2=4$}
+                \caption{Initial and final equilibrium configurations after $100000$ iterations on $100$ site lattice at spacing $a=1$.}
                 \label{fig:initialfinalf4}
             \end{figure}
     \end{frame}
-    \begin{frame}{Isolated Modes \textcolor{black}{$f=2$}}
+    \begin{frame}{Isolated Modes \textcolor{black}{$\lambda=1,f=2$}}
         \begin{figure}
                     \centering
                     \begin{tikzpicture}[scale=1]
@@ -905,6 +927,7 @@ Theory}
 
                         \end{axis}
                     \end{tikzpicture}
+                    \caption{Asymmetric density function and non zero mean position.}
         \end{figure}
     \end{frame}
 
@@ -916,7 +939,7 @@ Theory}
             \end{itemize}
             \item<2-> How is it incorporated into HMC?
             \begin{itemize}
-                \item<2-> Multiply and divide momentum variables during the numerical integration of Hamilton's equations by a tempering parameter $\alpha$ \cite{neal_2011}.
+                \item<2-> Multiply (divide) momentum variables during the numerical integration of Hamilton's equations by a tempering parameter $\alpha$ in first (second) half of the trajectory \cite{neal_2011}.
             \end{itemize}
             \item<3-> What results would we expect?
             \begin{itemize}
@@ -924,8 +947,53 @@ Theory}
             \end{itemize}
         \end{itemize}
     \end{frame}
+    \begin{frame}{Leapfrog Integration}
+    \only<1-2>
+    {
+    \begin{block}{Hamiltonian}
+        Form of Hamiltonian for our simulation:
+        \begin{equation*}
+            \label{eq:HamiltonianUPlusK}
+            H\left(\bm{q},\bm{p}\right) = U\left(\bm{q}\right) + K\left(\bm{p}\right)
+        \end{equation*}
+    \end{block}
+    }
+    \only<2>
+    {
+    \begin{block}{Leapfrog Equations}
+        Half step in momentum then full step in position then half step in position to go from $t$ to $t+\epsilon$: 
+        \begin{align*}
+                p_i\left(t+\epsilon/2\right) &  = p_i\left(t\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t\right)\right) \\
+                q_i\left(t+\epsilon\right) &  = q_i\left(t\right) + \epsilon\frac{\partial K}{\partial p_i}\left(\bm{p}\left(t+\epsilon/2\right)\right) \\
+                p_i\left(t+\epsilon\right) &  = p_i\left(t+\epsilon/2\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t+\epsilon\right)\right)
+            \end{align*}
+    \end{block}
+    }
+    \only<3>
+    {
+        \begin{block}{Tempered Leapfrog Equations First Half Trajectory}
+            Multiply momentum variables by $\sqrt{\alpha}$ before first half step in momentum and after second half step during second half of trajectory:
+            \begin{align*}
+                 p_i\left(t+\epsilon/2\right) & = \sqrt{\alpha}p_i\left(t\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t\right)\right) \\
+                \label{eq:TLeapFrogEq2}q_i\left(t+\epsilon\right) & = q_i\left(t\right) + \epsilon\frac{\partial K}{\partial p_i}\left(\bm{p}\left(t+\epsilon/2\right)\right) \\
+                \label{eq:TLeapFrogEq3}p_i\left(t+\epsilon\right) & = \sqrt{\alpha}\left(p_i\left(t+\epsilon/2\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t+\epsilon\right)\right)\right)
+            \end{align*}
+        \end{block}
+    }
+    \only<4>
+    {
+        \begin{block}{Tempered Leapfrog Equations Second Half Trajectory}
+        Divide momentum variables by $\sqrt{\alpha}$ before first half step in momentum and after second half step during first half of trajectory:
+            \begin{align*}
+                p_i\left(t+\epsilon/2\right) & = \frac{1}{\sqrt{\alpha}}p_i\left(t\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t\right)\right) \\
+                q_i\left(t+\epsilon\right) & = q_i\left(t\right) + \epsilon\frac{\partial K}{\partial p_i}\left(\bm{p}\left(t+\epsilon/2\right)\right) \\
+                p_i\left(t+\epsilon\right) & = \frac{1}{\sqrt{\alpha}}\left(p_i\left(t+\epsilon/2\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t+\epsilon\right)\right)\right)
+            \end{align*}
+        \end{block}
+    }
+\end{frame}
 
-    \begin{frame}{Molecular Dynamics Hamiltonian Evolution \large\textcolor{black}{$\alpha=1.001,f=2$}}
+    \begin{frame}{Molecular Dynamics Hamiltonian Evolution \large\textcolor{black}{$\alpha=1.001$}}
     \begin{figure}
     \centering
     \begin{tikzpicture}[scale=1]
@@ -939,15 +1007,16 @@ Theory}
                                 table[x index=0, y index=1]{../Report/DataForReport/1001HamiltonianEvolution.dat};
                                 \draw [gray,dashed] (axis cs: 0,197.369) -- (axis cs: 200,197.369);
                                 \draw [gray,dashed] (axis cs: 0,197.298) -- (axis cs: 200,197.298);
-                                \node [draw,align=right] at (axis cs: 100,200) {$\Delta H_{HMC} = 0.071$};
+                                \node [draw,align=right] at (axis cs: 100,200) {$\Delta H_{HMC} = -0.071$};
 
                             \end{axis}
                         \end{tikzpicture}
+                        \caption{Evolution of HMC Hamiltonian along tempered leapfrog trajectory for $100$ site lattice at spacing $a=1$ with anharmonic potential $\lambda=1,f=2$.}
                         
   \end{figure}%% 
   
   \end{frame}
-  \begin{frame}{Molecular Dynamics Configuration Evolution \large\textcolor{black}{$\alpha=1.001,f=2$}}
+  \begin{frame}{Molecular Dynamics Configuration Evolution \large\textcolor{black}{$\alpha=1.001$}}
   \begin{figure}
     \centering
     \begin{tikzpicture}[scale=1]
@@ -974,11 +1043,12 @@ Theory}
 
                             \end{axis}
                         \end{tikzpicture}
+                        \caption{Evolution of the equilibrium configuration along the tempered leapfrog trajectory.}
                         
   \end{figure} 
 
 \end{frame}
-\begin{frame}{Molecular Dynamics Hamiltonian Evolution \large\textcolor{black}{$\alpha=1.01, f=2$}}
+\begin{frame}{Molecular Dynamics Hamiltonian Evolution \large\textcolor{black}{$\alpha=1.01$}}
   \begin{figure}
     \centering
     \begin{tikzpicture}[scale=1]
@@ -996,10 +1066,11 @@ Theory}
                                 \draw [thick] [<->] (axis cs: 100,197.369) -- (axis cs: 100,213.374);
                             \end{axis}
                         \end{tikzpicture}
+                        \caption{Evolution of HMC Hamiltonian along tempered leapfrog trajectory.}
                         
   \end{figure}%% 
 \end{frame}
-\begin{frame}{Molecular Dynamics Configuration Evolution \large\textcolor{black}{$\alpha=1.01, f=2$}}
+\begin{frame}{Molecular Dynamics Configuration Evolution \large\textcolor{black}{$\alpha=1.01$}}
   \begin{figure}
     \centering
     \begin{tikzpicture}[scale=1]
@@ -1025,10 +1096,11 @@ Theory}
 
                             \end{axis}
                         \end{tikzpicture}
+                        \caption{Evolution of the equilibrium configuration along the tempered leapfrog trajectory.}
                         
   \end{figure} 
 \end{frame}
-\begin{frame}{Molecular Dynamics Hamiltonian Evolution \large\textcolor{black}{$\alpha=1.05, f=2$}} 
+\begin{frame}{Molecular Dynamics Hamiltonian Evolution \large\textcolor{black}{$\alpha=1.05$}} 
   \begin{figure}
     \centering
     \begin{tikzpicture}[scale=1]
@@ -1045,10 +1117,11 @@ Theory}
                                 \node [draw,align=right] at (axis cs: 150,100000) {$\Delta H_{HMC} = $ \\ $ 616.047$};
                             \end{axis}
                         \end{tikzpicture}
+                        \caption{Evolution of HMC Hamiltonian along tempered leapfrog trajectory.}
                         
   \end{figure}%% 
 \end{frame}
-\begin{frame}{Molecular Dynamics Configuration Evolution \large\textcolor{black}{$\alpha=1.05,f=2$}}
+\begin{frame}{Molecular Dynamics Configuration Evolution \large\textcolor{black}{$\alpha=1.05$}}
   \begin{figure}
     \centering
     \begin{tikzpicture}[scale=1]
@@ -1074,6 +1147,7 @@ Theory}
 
                             \end{axis}
                         \end{tikzpicture}
+                        \caption{Evolution of the equilibrium configuration along the tempered leapfrog trajectory.}
                         
   \end{figure} 
 \end{frame}
@@ -1083,7 +1157,7 @@ Theory}
         \begin{itemize}
             \item<1-> Did it work? 
             \begin{itemize}
-                \item<1-> Successfully reproduced results using HMC method.
+                \item<1-> Successfully reproduced theoretical results using HMC method.
             \end{itemize}
             \item<2-> What about tempering?
             \begin{itemize}
@@ -1091,7 +1165,7 @@ Theory}
             \end{itemize}
             \item<3-> Suggestions for future work?
             \begin{itemize}
-                \item<3-> Experiment with the possibility of tempering only a few lattice variables.
+                \item<3-> Experiment with the possibility of tempering only a few lattice variables - \textit{local tempering}.
             \end{itemize}
         \end{itemize}
     \end{frame}
@@ -1103,49 +1177,93 @@ Theory}
     \bibliography{../Report/Report}
 \end{frame}
 
-\begin{frame}{Leapfrog Integration}
-    \only<1-2>
-    {
-    \begin{block}{Hamiltonian}
-        \begin{equation*}
-            \label{eq:HamiltonianUPlusK}
-            H\left(\bm{q},\bm{p}\right) = U\left(\bm{q}\right) + K\left(\bm{p}\right)
+\begin{frame}[t,allowframebreaks]{Volume Preservation on Phase Space}
+Can define the mappings on phase space:
+\begin{align*}
+                \label{eq:psMap1}
+                \mathcal{T}_q\left(\epsilon\right)\begin{pmatrix} \bm{q} \\ \bm{p} \end{pmatrix} & = \begin{pmatrix} \bm{q} +\epsilon \underline{\nabla}_pK\left(\bm{p}\right) \\ \bm{p} \end{pmatrix}, \\
+                \label{eq:psMap2}
+                \mathcal{T}_p\left(\epsilon\right)\begin{pmatrix} \bm{q} \\ \bm{p} \end{pmatrix} & = \begin{pmatrix} \bm{q} \\ \bm{p} - \epsilon \underline{\nabla}_qU\left(\bm{q}\right) \end{pmatrix},
+            \end{align*}
+            with a slight abuse of notation the Jacobians of these mappings will be of the form:
+            \begin{equation*}
+                J = \det\begin{pmatrix}\frac{\partial q_i'}{\partial q_j} & \frac{\partial q_i'}{\partial p_j} \\ \frac{\partial p_i'}{\partial q_j} & \frac{\partial p_i'}{\partial p_j} \end{pmatrix}
+            \end{equation*}
+            so that:
+            \begin{align*}
+            J_q& =\det\begin{pmatrix} \delta_{ij} & \epsilon\partial_{p_i}\partial_{p_j}K\left(\bm{p}\right) \\ 0 & \delta_{ij} \end{pmatrix} = 1 \\
+            J_p& =\det\begin{pmatrix} \delta_{ij} &  0  \\ -\epsilon\partial_{q_i}\partial_{q_j}U\left(\bm{q}\right) & \delta_{ij} \end{pmatrix} = 1.
+            \end{align*}
+            Single leapfrog step of size epsilon can be written as:
+            \begin{equation*}
+                \label{eq:lfcomp1}
+                \mathcal{T}\left(\epsilon\right)=\mathcal{T}_p\left(\epsilon/2\right)\circ \mathcal{T}_q\left(\epsilon\right)\circ \mathcal{T}_p\left(\epsilon/2\right).
+            \end{equation*}
+            We may write the mapping that via leapfrog integration takes us from the start to the end of the trajectory as:
+            \begin{equation*}
+                \text{traj}\left(\epsilon,l\right) = \left(\mathcal{T}\left(\epsilon\right)\right)^l,
+            \end{equation*}
+            which has Jacobian $1$, therefore volume preserved.
+
+
+\end{frame}
+
+\begin{frame}[t,allowframebreaks]{Volume Preservation on Phase Space with Tempering}
+Can define the mappings on phase space:
+\begin{align*}
+        \mathcal{T}_{p_1}\left(\epsilon,\alpha\right)\begin{pmatrix} \bm{q} \\ \bm{p} \end{pmatrix} & = \begin{pmatrix} \bm{q} \\ \sqrt{\alpha}\bm{p} - \epsilon \underline{\nabla}_{q}U\left(\bm{q}\right)\end{pmatrix},\\
+        \mathcal{T}_{q}\left(\epsilon\right)\begin{pmatrix} \bm{q} \\ \bm{p} \end{pmatrix} & = \begin{pmatrix} \bm{q} + \epsilon \underline{\nabla}_pK\left(\bm{p}\right)  \\ \bm{p} \end{pmatrix},\\
+        \mathcal{T}_{p_2}\left(\epsilon,\alpha\right)\begin{pmatrix} \bm{q} \\ \bm{p} \end{pmatrix} & = \begin{pmatrix} \bm{q} \\ \sqrt{\alpha}\left(\bm{p} - \epsilon \underline{\nabla}_qU\left(\bm{q}\right)\right)\end{pmatrix},
+    \end{align*}
+Jacobians of these mappings:
+\begin{align*}
+        J_{p_1} & = \det\begin{pmatrix} \delta_{ij} & 0 \\ -\epsilon\partial q_i \partial q_j U\left(\bm{q}\right) & \sqrt{\alpha}\delta_{ij} \end{pmatrix} = \alpha^\frac{d}{2} \\
+        J_{q} & = \det\begin{pmatrix} \delta_{ij} & \epsilon\partial p_i \partial p_j K\left(\bm{p}\right) \\ 0 & \delta_{ij} \end{pmatrix} = 1 \\
+        J_{p_2} & = \det\begin{pmatrix} \delta_{ij} & 0 \\ -\sqrt{\alpha}\epsilon\partial q_i \partial q_j U\left(\bm{q}\right) & \sqrt{\alpha}\delta_{ij} \end{pmatrix} = \alpha^\frac{d}{2}.
+    \end{align*}
+
+Leapfrog step in the first half of the trajectory: $\mathcal{T}\left(\alpha,\epsilon\right) = \mathcal{T}_{p_2}\left(\alpha,\epsilon/2\right)\circ\mathcal{T}_q\left(\epsilon\right)\circ\mathcal{T}_{p_1}\left(\alpha,\epsilon/2\right)$, with Jacobian $ \alpha^d $, second half trajectory as $\mathcal{T}\left(1/\alpha,\epsilon\right) = \mathcal{T}_{p_2}\left(1/\alpha,\epsilon/2\right)\circ\mathcal{T}_q\left(\epsilon\right)\circ\mathcal{T}_{p_1}\left(1/\alpha,\epsilon/2\right)$ with Jacobian $1/\alpha^{d}$. 
+
+The mapping which via the leapfrog equations takes us from the start to the end of the trajectory can be written as:
+    \begin{equation*}
+        \text{traj}\left(\alpha,\epsilon,l\right)=\left[\mathcal{T}\left(1/\alpha,\epsilon\right)\right]^{\frac{l}{2}}\circ\left[\mathcal{T}\left(\alpha,\epsilon\right)\right]^{\frac{l}{2}}
+    \end{equation*}
+    which has Jacobian $J_{\text{traj}}=\left[\alpha^d\right]^{\frac{l}{2}}\left[1/\alpha^d\right]^{\frac{l}{2}} = 1$, therefore volume preserved.
+
+\end{frame}
+
+\begin{frame}[t,allowframebreaks]{Ground State Expectation Values}
+    \begin{equation*}
+            \braket{\hat{A}} = \frac{\text{Tr}\left(e^{-\left(\tau_b-\tau_a\right)\hat{H}/\hbar}\hat{A}\right)}{\text{Tr}\left(e^{-\left(\tau_b-\tau_a\right)\hat{H}/\hbar}\right)}
         \end{equation*}
-    \end{block}
-    }
-    \only<2>
-    {
-    \begin{block}{Leapfrog Equations}
+         Following the discretisation theory as for the transition amplitude\cite{creutz_freedman_1981}:
         \begin{align*}
-                p_i\left(t+\epsilon/2\right) &  = p_i\left(t\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t\right)\right) \\
-                q_i\left(t+\epsilon\right) &  = q_i\left(t\right) + \epsilon\frac{\partial K}{\partial p_i}\left(\bm{p}\left(t+\epsilon/2\right)\right) \\
-                p_i\left(t+\epsilon\right) &  = p_i\left(t+\epsilon/2\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t+\epsilon\right)\right)
-            \end{align*}
-    \end{block}
-    }
-    \only<3>
-    {
-        \begin{block}{Tempered Leapfrog Equations First Half Trajectory}
-            \begin{align*}
-                 p_i\left(t+\epsilon/2\right) & = \sqrt{\alpha}p_i\left(t\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t\right)\right) \\
-                \label{eq:TLeapFrogEq2}q_i\left(t+\epsilon\right) & = q_i\left(t\right) + \epsilon\frac{\partial K}{\partial p_i}\left(\bm{p}\left(t+\epsilon/2\right)\right) \\
-                \label{eq:TLeapFrogEq3}p_i\left(t+\epsilon\right) & = \sqrt{\alpha}\left(p_i\left(t+\epsilon/2\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t+\epsilon\right)\right)\right)
-            \end{align*}
-        \end{block}
-    }
-    \only<4>
-    {
-        \begin{block}{Tempered Leapfrog Equations Second Half Trajectory}
-            \begin{align*}
-                p_i\left(t+\epsilon/2\right) & = \frac{1}{\sqrt{\alpha}}p_i\left(t\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t\right)\right) \\
-                q_i\left(t+\epsilon\right) & = q_i\left(t\right) + \epsilon\frac{\partial K}{\partial p_i}\left(\bm{p}\left(t+\epsilon/2\right)\right) \\
-                p_i\left(t+\epsilon\right) & = \frac{1}{\sqrt{\alpha}}\left(p_i\left(t+\epsilon/2\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t+\epsilon\right)\right)\right)
-            \end{align*}
-        \end{block}
-    }
-
-
-
+            \label{eq:SpecialEXP2}
+            \braket{\hat{A}} & = \frac{\int^{+\infty}_{-\infty}\prod_{i=0}^{N-1}dx_i A\left(x_0,\dots,x_{N-1}\right)\exp{\left(-\frac{1}{\hbar}S_{E}\left(\bm{x}\right)\right)}}{\int^{+\infty}_{-\infty}\prod_{i=0}^{N-1}dx_i \exp{\left(-\frac{1}{\hbar}S_{E}\left(\bm{x}\right)\right)}}\\
+            & = \langle A \rangle
+        \end{align*}
+        Limit that $\tau_b - \tau_a \rightarrow \infty$ for a large enough lattice: 
+        \begin{align*}
+            \braket{\hat{A}} & = \frac{\sum_{n=0}^{\infty}e^{-\frac{1}{\hbar}E_n\left(\tau_b-\tau_a\right)}\bra{n}\hat{A}\ket{n}}{\sum_{n=0}^{\infty}e^{-\frac{1}{\hbar}E_n\left(\tau_b-\tau_a\right)}} \\
+            & = \bra{0}\hat{A}\ket{0}.
+        \end{align*}
+\end{frame}
+\begin{frame}[t,allowframebreaks]{Quantum Virial Theorem}
+    \begin{equation*}
+        2\bra{n} \hat{T} \ket{n} = \bra{n} \hat{x} \hat{V}'\left(\hat{x}\right) \ket{n}
+    \end{equation*}
+    giving:
+    \begin{align*}
+            E_0 & = \langle \frac{1}{2}xV'\left(x\right) +  V\left(x\right) \rangle
+    \end{align*}
+    so for harmonic oscillator:
+    \begin{equation*}
+        E_0 = \mu^2\braket{x^2},
+    \end{equation}
+    and anharmonic oscillator:
+    \begin{equation*}
+        E_0=3\lambda\braket{x^4}-4\lambda f^2\braket{x^2}+\lambda f^4.
+    \end{equation}
 \end{frame}
 
 
