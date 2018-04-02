@@ -19,6 +19,7 @@
 \usepackage{nicefrac}
 \usepackage{mathtools}
 \usepackage{bm}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
 
 
@@ -103,8 +104,8 @@ Theory}
                         \draw (\x,3pt) -- (\x,-3pt);
                     \foreach \y in {0,...,13}
                         \draw (3pt,\y) -- (-3pt,\y);
-                    \node[below=0.8cm] at (x axis mid) {$\text{position}$ $x$};
-                    \node[left=0.8cm] at (y axis mid) {$\text{time}$ $t$};
+                    \node[below=0.8cm] at (x axis mid) {\huge position $x$};
+                    \node[left=0.8cm] at (y axis mid) {\huge time $t$};
                     \node [left,font=\fontsize{40}{0}] at (0,0) {$t_{a}$};
                     \node [left,font=\fontsize{40}{0}] at (0,13) {$t_{b}$};
                     \node [below,font=\fontsize{40}{0}] at (4.5,-0.1) {$x_a$};
@@ -155,8 +156,8 @@ Theory}
                 \node [left,font=\fontsize{20}{0}] at (0,11) {$t_{N-2}$};
                 \node [left,font=\fontsize{20}{0}] at (0,12) {$t_{N-1}$};
                 \node [left,font=\fontsize{20}{0}] at (0,13) {$t_{N}=t_{b}$};
-                \node[below=0.8cm] at (x axis mid) {position $x$};
-                \node[left=0.8cm] at (y axis mid) {time $t$};
+                \node[below=0.8cm] at (x axis mid) {\huge position $x$};
+                \node[left=0.8cm] at (y axis mid) {\huge time $t$};
                 \draw [thick] [<->] (13,7) -- (13,8) ;
                 \node [below=0.5cm,font=\fontsize{40}{0}] [right] at (13,8) {$\epsilon$};
                 \draw [thick,green] (4.5,0) -- (4.9,1);
@@ -175,7 +176,7 @@ Theory}
                 \node [below,font=\fontsize{20}{0}] at (4.5,-0.1) {$x_a$};
                 \node [below,font=\fontsize{20}{0}] at (10.2,-0.1) {$x_b$};
             \end{tikzpicture}
-            \caption{Discretising time and a path from $\left(x_a,t_a\right)$ to $\left(x_b,t_b\right)$  onto a lattice of time spacing $\epsilon$.}
+            \vspace*{-2mm}\caption{ Discretising time and a path from $\left(x_a,t_a\right)$ to $\left(x_b,t_b\right)$  onto a lattice of time spacing $\epsilon$.}
             \label{fig:TimeLattice}
         \end{figure}
         }
@@ -414,7 +415,7 @@ Theory}
                 Hamiltonian for the joint canonical but separable distribution of $\left(\bm{x},\bm{p}\right)$:
                 \begin{equation*}
                     \label{eq:HMCHamiltonian}
-                    H_{HMC}\left(\bm{x},\bm{p}\right) \coloneqq \sum_{i=0}^{N-1} \frac{ p_{i}^{2} } {2} + S_{E}\left(\bm{x}\right)
+                    H_{HMC}\left(\bm{x},\bm{p}\right) = \sum_{i=0}^{N-1} \frac{ p_{i}^{2} } {2} + S_{E}\left(\bm{x}\right)
                 \end{equation*}
                 }
             \end{block}
@@ -972,7 +973,7 @@ Theory}
     \only<3>
     {
         \begin{block}{Tempered Leapfrog Equations First Half Trajectory}
-            Multiply momentum variables by $\sqrt{\alpha}$ before first half step in momentum and after second half step during second half of trajectory:
+            Multiply momentum variables by $\sqrt{\alpha}$ before first half step in momentum and after second half step during first half of trajectory:
             \begin{align*}
                  p_i\left(t+\epsilon/2\right) & = \sqrt{\alpha}p_i\left(t\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t\right)\right) \\
                 \label{eq:TLeapFrogEq2}q_i\left(t+\epsilon\right) & = q_i\left(t\right) + \epsilon\frac{\partial K}{\partial p_i}\left(\bm{p}\left(t+\epsilon/2\right)\right) \\
@@ -983,7 +984,7 @@ Theory}
     \only<4>
     {
         \begin{block}{Tempered Leapfrog Equations Second Half Trajectory}
-        Divide momentum variables by $\sqrt{\alpha}$ before first half step in momentum and after second half step during first half of trajectory:
+        Divide momentum variables by $\sqrt{\alpha}$ before first half step in momentum and after second half step during second half of trajectory:
             \begin{align*}
                 p_i\left(t+\epsilon/2\right) & = \frac{1}{\sqrt{\alpha}}p_i\left(t\right) - \epsilon/2\frac{\partial U}{\partial q_i}\left(\bm{q}\left(t\right)\right) \\
                 q_i\left(t+\epsilon\right) & = q_i\left(t\right) + \epsilon\frac{\partial K}{\partial p_i}\left(\bm{p}\left(t+\epsilon/2\right)\right) \\
@@ -1259,11 +1260,11 @@ The mapping which via the leapfrog equations takes us from the start to the end 
     so for harmonic oscillator:
     \begin{equation*}
         E_0 = \mu^2\braket{x^2},
-    \end{equation}
+    \end{equation*}
     and anharmonic oscillator:
     \begin{equation*}
         E_0=3\lambda\braket{x^4}-4\lambda f^2\braket{x^2}+\lambda f^4.
-    \end{equation}
+    \end{equation*}
 \end{frame}
 
 
